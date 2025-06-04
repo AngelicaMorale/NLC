@@ -4,12 +4,37 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #000;
-    color: white;
+@font-face {
+   font-family: 'Raleway';
+   src: url('assets/Raleway-Regular.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
 }
 
+@font-face {
+   font-family: 'Raleway';
+   src: url('assets/Raleway-Medium.ttf') format('truetype');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Raleway';
+   src: url('assets/Raleway-Bold.ttf') format('truetype');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+body {
+   font-family: 'Raleway';
+   background-color: #ffffff;
+   color: white;
+}
+
+/* Header Styles */
 .header {
     background-color: #000;
     padding: 20px 0;
@@ -30,19 +55,10 @@ body {
     align-items: center;
 }
 
-.logo {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-    line-height: 1.2;
-}
-
-.logo:hover {
-    opacity: 0.8;
+.logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 250px;
 }
 
 .nav {
@@ -112,7 +128,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Mobile Menu */
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -128,7 +143,388 @@ body {
     transition: 0.3s;
 }
 
-/* Responsive */
+/* Services Section Styles */
+.services-section {
+    margin-top: 100px;
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.services-header h1 {
+    font-size: 1.875rem;
+    margin-bottom: 20px;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.services-header p {
+    font-size: 1.1rem;
+    color: #3d3d3d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #7b7b7b;
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #CFB53B;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.icon-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.service-card h3 {
+    font-size: 1.125rem;
+    color: #5C5C5C;
+    margin-bottom: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Platforms Section Styles */
+.platforms-section {
+    background-color: #ffffff;
+    padding: 80px 40px;
+}
+
+.platforms-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.platforms-container h2 {
+    font-size: 1.875rem;
+    color: #000000;
+    margin-bottom: 50px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.platforms-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.platforms-image {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.platforms-image:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Detailed Services Section Styles */
+.detailed-services-section {
+    background-color: #f8f9fa;
+    padding: 80px 40px;
+    margin-top: 0;
+}
+
+.detailed-services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.detailed-services-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.detailed-services-header h2 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.detailed-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.detailed-service-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.detailed-service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.detailed-service-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 15px;
+}
+
+.detailed-service-item:hover .detailed-service-icon {
+    transform: scale(1.1);
+}
+
+.detailed-service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.detailed-service-item h3 {
+    font-size: 1.25rem;
+    color: #000000;
+    margin-bottom: 25px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.detailed-service-list {
+    list-style: none;
+    text-align: left;
+}
+
+.detailed-service-list li {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.detailed-service-list li::before {
+    content: '•';
+    color: #ffd700;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Design Process Section Styles */
+.design-process-section {
+    background-color: #1a1a1a;
+    padding: 80px 40px;
+    margin-top: 0;
+}
+
+.design-process-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.process-title {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.process-title h2 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.process-stages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.process-stage {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1f1f1f 100%);
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.process-stage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: #444;
+}
+
+.stage-header {
+    background: linear-gradient(135deg, #333 0%, #2a2a2a 100%);
+    padding: 30px 35px;
+    border-bottom: 1px solid #404040;
+}
+
+.stage-header h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stage-content {
+    padding: 35px;
+}
+
+.stage-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.stage-list li {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.stage-list li:last-child {
+    margin-bottom: 0;
+}
+
+.stage-list li::before {
+    content: '•';
+    color: #ffd700;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .detailed-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .design-process-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .process-title {
+        position: static;
+        text-align: center;
+        height: auto;
+        display: block;
+    }
+    
+    .process-title h2 {
+        font-size: 2.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Nuevo breakpoint para tablets */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .detailed-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .design-process-section {
+        padding: 60px 20px;
+    }
+    
+    .process-title h2 {
+        font-size: 2.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Breakpoint para tablets pequeñas */
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
@@ -158,26 +554,166 @@ body {
     .linkedin-icon {
         margin-left: 0;
     }
+
+    .services-section {
+        padding: 60px 20px;
+    }
+
+    .services-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .services-header p {
+        font-size: 1.1rem;
+    }
+
+    /* Mantener 2 columnas en tablets */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+    }
+
+    .service-card p {
+        font-size: 0.875rem;
+    }
+
+    .platforms-section {
+        padding: 60px 20px;
+    }
+
+    .platforms-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .detailed-services-section {
+        padding: 60px 20px;
+    }
+    
+    .detailed-services-header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .detailed-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .detailed-service-item {
+        padding: 30px 20px;
+    }
+    
+    .design-process-container {
+        gap: 40px;
+    }
+    
+    .process-title h2 {
+        font-size: 2rem;
+    }
+    
+    .stage-header {
+        padding: 25px 30px;
+    }
+    
+    .stage-header h3 {
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .stage-content {
+        padding: 30px;
+    }
 }
 
-/* Demo content to show header behavior */
-.demo-content {
-    margin-top: 100px;
-    padding: 50px 40px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+/* Breakpoint para móviles - 1 columna */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .detailed-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
-.demo-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #ffd700;
-}
+@media (max-width: 480px) {
+    .services-header h1 {
+        font-size: 1.25rem;
+    }
 
-.demo-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #ccc;
+    .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .platforms-container h2 {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+    
+    .platforms-section {
+        padding: 50px 15px;
+    }
+    
+    .detailed-services-section {
+        padding: 50px 15px;
+    }
+    
+    .detailed-services-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .detailed-service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .design-process-section {
+        padding: 50px 15px;
+    }
+    
+    .process-title h2 {
+        font-size: 1.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .stage-header {
+        padding: 20px 25px;
+    }
+    
+    .stage-header h3 {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .stage-content {
+        padding: 25px;
+    }
+    
+    .stage-list li {
+        font-size: 0.9rem;
+    }
 }
